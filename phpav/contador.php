@@ -1,8 +1,6 @@
 <?php
 
-$nomeArquivo = str_replace('.php', '', $_SERVER['PHP_SELF']);
-$nomeArquivo = str_replace('.html', '', $nomeArquivo);
-$nomeArquivo = str_replace('.htm', '', $nomeArquivo);
+$nomeArquivo = preg_replace('/[.][a-zA-Z]{2,4}$/', '', $_SERVER['PHP_SELF']);
 $nomeArquivo = str_replace('/', '_', $nomeArquivo);
 
 $diretorio = 'contadores';
